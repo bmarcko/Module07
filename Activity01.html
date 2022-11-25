@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-app="">
+    
+    <h1>Login / Register</h1>
+    Login
+    <input type="checkbox" ng-model="myVar" ng-init="myVar-false" ng-disabled="myVar2">
+    <br>
+    Register
+    <input type="checkbox" ng-model="myVar2" ng-init="myVar2-false"  ng-disabled="myVar">
+    <br><br>
+
+    <div ng-if="myVar">
+        <div ng-hide="toShow">
+            <h1>Log In</h1>
+            <form name="form">
+                Username: <input type="text" ng-readonly="name"  required> 
+                Password: <input type="text" ng-model="pass" required>
+                <br>
+                Remember me <input type="checkbox" ng-model="name"> 
+                <br>
+                <input type="button" ng-disabled="form.$invalid" ng-click="toShow=true" value="Log In">
+            </form>
+        </div>
+        <div ng-show="toShow">
+            <h1>Log In successful!</h1>
+            <br>
+            <br>
+            <input type="button" ng-click="toShow=false" value="Logout">
+        </div>
+    </div>
+
+    <div ng-if="myVar2">
+        <div ng-hide="toShow2">
+            <h1>Register</h1>
+            <form name="form2">
+                Username: <input type="text" ng-model="name2" required>
+                Password: <input type="text" ng-model="pass2" required>
+                <br>
+                <br>
+                <input type="button" ng-disabled="form2.$invalid" ng-click="toShow2=true" value="Register">
+            </form>
+        </div>
+        <div ng-show="toShow2">
+            <h1>Register successful!</h1>
+        </div>
+    </div>
+
+  </body>
+</html>

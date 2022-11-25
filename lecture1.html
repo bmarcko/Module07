@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-app="">
+    
+      Register Now! <input type="checkbox" ng-model="myVar" ng-init="myVar-false">
+      <input type="checkbox" ng-model="myVar2" ng-init="myVar2-false">
+      
+    <div ng-if="myVar">
+        <p>Sign In</p>
+        <label>Username</label>
+        <input type="text">
+        <label>Password</label>
+        <input type="text">
+    </div>
+
+    <div ng-if="myVar2">
+        <p>Register</p>
+        <label>Username</label>
+        <input type="text">
+        <label>Password</label>
+        <input type="text">
+    </div>
+
+    <div>
+        <label>Click me to make text readonly:</label>
+        <input type="checkbox" ng-model="checked"><br>
+
+        <!-- <input type="text" ng-readonly="checked" value=""/> -->
+        <input type="text" ng-disabled="checked" value=""/>
+    </div>
+
+  </body>
+</html>
